@@ -35,7 +35,7 @@ return {
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		local servers = { "html", "cssls", "tsserver", "pyright", "tailwindcss" }
+		local servers = { "html", "cssls", "tsserver", "pyright", "tailwindcss", "emmet_ls" }
 
 		for _, server in ipairs(servers) do
 			nvim_lsp[server].setup({
@@ -70,7 +70,7 @@ return {
 			signs = {
 				active = signs, -- show signs
 			},
-			update_in_insert = true,
+			update_in_insert = false,
 			underline = true,
 			severity_sort = true,
 			float = {

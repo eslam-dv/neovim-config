@@ -20,6 +20,7 @@ alias zc="nvim ~/.zshrc"
 alias sc="source ~/.zshrc"
 alias ll="ls -l"
 alias la="ls -la"
+alias ff="fastfetch"
 
 # Environment Variables
 export MYVIMRC=~/.config/nvim/
@@ -34,5 +35,5 @@ zstyle ':vcs_info:*' stagedstr ''
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats ' on %F{red}%f %F{cyan}%b%f %F{yellow}%c%f%F{red}%u%f'
 
-PROMPT="%F{blue}%1~%f${vcs_info_msg_0_}%(?.%F{green}.%F{red})❯%f "
+PROMPT="%F{blue}%1~%f${vcs_info_msg_0_} %(?.%F{green}.%F{red})❯%f "
 # RPROMPT="\$vcs_info_msg_0_"

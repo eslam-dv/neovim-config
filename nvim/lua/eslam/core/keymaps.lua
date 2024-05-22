@@ -8,6 +8,9 @@ vim.g.mapleader = " " -- set space as leader key
 map("i", "jk", "<esc>", opts)
 map("i", "kj", "<esc>", opts)
 
+map({ "i", "n" }, "<C-a>", "<ESC>ggVG") -- Select All
+map({ "i", "n" }, "<C-s>", "<ESC>:w<CR>") -- Save File
+
 -- Normal Mode --
 map("n", "<leader>h", ":nohl<cr>", opts)
 
@@ -18,10 +21,10 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-map("n", "<C-Up>", ":resize -2<CR>", opts)
-map("n", "<C-Down>", ":resize +2<CR>", opts)
-map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+map("n", "<C-Up>", ":resize -1<CR>", opts)
+map("n", "<C-Down>", ":resize +3<CR>", opts)
+map("n", "<C-Left>", ":vertical resize -1<CR>", opts)
+map("n", "<C-Right>", ":vertical resize +3<CR>", opts)
 
 -- Navigaye Buffers
 map("n", "L", ":bnext<CR>", opts)
@@ -29,11 +32,11 @@ map("n", "H", ":bprevious<CR>", opts)
 map("n", "Q", ":bdelete!<CR>", opts)
 
 -- Move text up and down
-map("n", "<A-j>", ":m .+1<CR>==", opts)
-map("n", "<A-k>", ":m .-2<CR>==", opts)
+map("n", "<A-j>", ":m .+2<CR>==", opts)
+map("n", "<A-k>", ":m .-1<CR>==", opts)
 
 -- Open netrw
-map("n", "<leader>e", ":Explore<CR>", opts)
+-- map("n", "<leader>e", ":Explore<CR>", opts)
 
 -- Visual Mode --
 
@@ -42,8 +45,8 @@ map("v", "<", "<gv^", opts)
 map("v", ">", ">gv^", opts)
 
 -- Move text up and down
-map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-map("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+map("v", "<A-j>", ":m '>+2<CR>gv=gv", opts)
+map("v", "<A-k>", ":m '<-1<CR>gv=gv", opts)
 
 -- Better paste
 map("v", "p", '"_dP', opts)
@@ -58,3 +61,4 @@ map("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Plugins --
 map("n", "<C-t>", ":ToggleTerm<cr>", opts)
+map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
