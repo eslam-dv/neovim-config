@@ -32,11 +32,8 @@ map("n", "H", ":bprevious<CR>", opts)
 map("n", "Q", ":bdelete!<CR>", opts)
 
 -- Move text up and down
-map("n", "<A-j>", ":m .+2<CR>==", opts)
-map("n", "<A-k>", ":m .-1<CR>==", opts)
-
--- Open netrw
--- map("n", "<leader>e", ":Explore<CR>", opts)
+map("n", "<A-j>", ":m .+1<CR>==", opts)
+map("n", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Visual Mode --
 
@@ -45,8 +42,8 @@ map("v", "<", "<gv^", opts)
 map("v", ">", ">gv^", opts)
 
 -- Move text up and down
-map("v", "<A-j>", ":m '>+2<CR>gv=gv", opts)
-map("v", "<A-k>", ":m '<-1<CR>gv=gv", opts)
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Better paste
 map("v", "p", '"_dP', opts)
