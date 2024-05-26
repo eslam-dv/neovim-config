@@ -1,39 +1,64 @@
-[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Set location for zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Download zinit if it's not there
+if [ ! -d "$ZINIT_HOME" ]; then 
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# Source/Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Install Powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+# Install zsh plugins
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light Aloxaf/fzf-tab
+
+# Load Completions
+autoload -U compinit && compinit
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Keybindings
+bindkey "^p" history-search-backward
+bindkey "^n" history-search-forward
 
 # History
+HISTSIZE=5000
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
-# Stop Beep Noise
-unsetopt beep
-
-# Plugins
-plug "zap-zsh/supercharge"
-plug "zsh-users/zsh-completions"
-plug "zsh-users/zsh-autosuggestions"
-plug "zsh-users/zsh-syntax-highlighting"
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias vc="nvim ~/.config/nvim/"
-alias zc="nvim ~/.zshrc"
-alias sc="source ~/.zshrc"
-alias ll="ls -l"
-alias la="ls -la"
-alias ff="fastfetch"
+alias ls='ls --color'
+alias c='clear'
+alias la='ls -la'
 
-# Environment Variables
-export MYVIMRC=~/.config/nvim/
-
-# Git
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-zstyle ':vcs_info:*' unstagedstr ''
-zstyle ':vcs_info:*' stagedstr ''
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats ' on %F{red}%f %F{cyan}%b%f %F{yellow}%c%f%F{red}%u%f'
-
-PROMPT="%F{blue}%1~%f${vcs_info_msg_0_} %(?.%F{green}.%F{red})❯%f "
-# RPROMPT="\$vcs_info_msg_0_"
+# Integration
+source /usr/share/fzf/shell/key-bindings.zsh
