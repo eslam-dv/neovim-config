@@ -5,26 +5,25 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Set location for zinit
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+# Zap setup
+ZAP_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zap"
 
-# Download zinit if it's not there
-if [ ! -d "$ZINIT_HOME" ]; then 
-  mkdir -p "$(dirname $ZINIT_HOME)"
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+if [ ! -d "$ZAP_DIR" ]; then
+  mkdir -p "$(dirname $ZAP_DIR)"
+  git clone https://github.com/zap-zsh/zap.git "$ZAP_DIR"
 fi
 
-# Source/Load zinit
-source "${ZINIT_HOME}/zinit.zsh"
+# Source/Load Zap
+source "${ZAP_DIR}/zap.zsh"
 
 # Install Powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-
+plug "romkatv/powerlevel10k"
 # Install zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+plug "zap-zsh/supercharge"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "zsh-users/zsh-completions"
+plug "zsh-users/zsh-autosuggestions"
+plug "Aloxaf/fzf-tab"
 
 # Load Completions
 autoload -U compinit && compinit
@@ -56,10 +55,13 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
-alias la='ls -la'
+alias ls="ls --color"
+alias la="ls -la"
 alias ..="cd ../"
 alias ...="cd ../.."
+alias cl="clear"
+alias zc="nvim ~/dotfiles/.zshrc"
+alias vc="nvim ~/dotfiles/.config/nvim/"
 
 # Integration
 source /usr/share/fzf/shell/key-bindings.zsh # fzf
