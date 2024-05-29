@@ -62,5 +62,5 @@ map("v", "p", '"_dP', opts)
 -- map("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Plugins --
-map("n", "<C-t>", ":ToggleTerm<cr>", opts)
+-- map("n", "<C-t>", ":ToggleTerm<cr>", opts)
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)

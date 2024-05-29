@@ -12,6 +12,18 @@ return {
 
 		-- enable comment
 		comment.setup({
+			toggler = {
+				---Line-comment toggle keymap
+				line = "<C-/>",
+				---Block-comment toggle keymap
+				block = "gbc",
+			},
+			opleader = {
+				---Line-comment keymap
+				line = "<C-/>",
+				---Block-comment keymap
+				block = "gb",
+			},
 			-- for commenting tsx, jsx, svelte, html files
 			pre_hook = ts_context_commentstring.create_pre_hook(),
 		})
