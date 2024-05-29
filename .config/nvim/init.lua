@@ -1,3 +1,2 @@
-require("eslam.core.options")
-require("eslam.core.keymaps")
+require("eslam.core")
 require("eslam.lazy")
