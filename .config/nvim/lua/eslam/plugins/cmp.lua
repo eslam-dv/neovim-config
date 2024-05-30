@@ -22,6 +22,7 @@ return {
 
 		local lspkind = require("lspkind")
 
+    luasnip.filetype_extend("javascriptreact", { "html" }) -- add html snippets to jsx
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
 

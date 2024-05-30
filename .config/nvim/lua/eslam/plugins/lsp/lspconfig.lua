@@ -35,7 +35,7 @@ return {
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		local servers = { "html", "cssls", "tsserver", "pyright", "tailwindcss", "emmet_ls" }
+		local servers = { "html", "cssls", "tsserver", "pyright", "emmet_ls" }
 
 		for _, server in ipairs(servers) do
 			nvim_lsp[server].setup({

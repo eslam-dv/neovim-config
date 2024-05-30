@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 local opts = { silent = true, noremap = true }
--- local term_opts = { silent = true }
+local term_opts = { silent = true }
 
 vim.g.mapleader = " " -- set space as leader key
 
@@ -56,11 +56,13 @@ map("v", "p", '"_dP', opts)
 -- Terminal --
 --
 -- Better terminal navigation
--- map("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- map("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- map("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- map("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+map("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+map("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+map("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+map("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+map("t", "<esc>", "<C-\\><C-n>", term_opts)
+map("t", "jk", "<C-\\><C-n>", term_opts)
 
 -- Plugins --
--- map("n", "<C-t>", ":ToggleTerm<cr>", opts)
+map("n", "<C-t>", ":ToggleTerm<cr>", opts)
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
