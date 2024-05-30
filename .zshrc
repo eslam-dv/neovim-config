@@ -55,16 +55,18 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls="ls --color"
+alias ls="eza --icons=always"
 alias la="ls -la"
 alias ..="cd ../"
 alias ...="cd ../.."
 alias cl="clear"
 alias zc="nvim ~/dotfiles/.zshrc"
 alias vc="nvim ~/dotfiles/.config/nvim/"
+alias cd="z"
 
 # Integration
 source /usr/share/fzf/shell/key-bindings.zsh # fzf
+eval "$(zoxide init zsh)"
 # fzf tokyonight theme
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=fg:#c0caf5,bg:#1a1b26,hl:#ff9e64 \
