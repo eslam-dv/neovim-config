@@ -1,0 +1,65 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  /* Tokyonight colors */
+  /* --foreground: #c0caf5; */
+  /* --foreground-inactive: #414868 ; */
+  /* --background: #1a1b26; */
+  /* --background-alt: #414868*/
+  /* --background-active:	#7aa2f7; */
+}
+
+#waybar {
+  color: #fff;
+  background-color: #1a1b26;
+}
+
+#workspaces button {
+  padding-left: 1em;
+  padding-right: 1.3em;
+}
+
+#workspaces button.empty {
+  color: #414868;
+}
+
+#workspaces button.active {
+  background-color: #7aa2f7;
+  border-radius: 3px;
+}
+
+#wireplumber,
+#pulseaudio,
+#custom-power,
+#language,
+#bat,
+#tray,
+#usage,
+#sound,
+#net {
+  background-color: #414868;
+  color: #c0caf5;
+  border-radius: 3px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-left: 0.3em;
+}
+
+#usage,
+#custom-power {
+  background-color: #7aa2f7;
+  color: #fff;
+}
+
+#custom-power {
+  padding-right: 1em;
+  padding-left: 0.6em;
+}
+
+#battery,
+#memory,
+#network {
+  margin-right: 0.8em;
+}

@@ -4,19 +4,19 @@
 
 Ensure you have the following installed in your system
 
->**_NOTE:_**
->Use your OS package manager
+> **_NOTE:_**
+> Use your OS package manager
 
 ### Git
 
 ```
-# dnf install git
+# pacman -S git
 ```
 
 ### GNU Stow
 
 ```
-# dnf install stow
+# pacman -S stow
 ```
 
 ## Installation
@@ -30,9 +30,22 @@ $ cd dotfiles
 
 the use GNU Stow to create symlinks
 
->**_NOTE:_** 
->Make sure there is no existing configerations on your system.
+> **_NOTE:_**
+> Make sure there is no existing configerations on your system.
 
 ```
 $ stow .
+```
+
+## Hyprland Setup
+
+```
+# pacman -S hyprland waybar rofi-wayland mako fastfetch wlogout network-manager-applet pavucontrol pamixer \
+playerctl brightnessctl grim slurp sddm hyprlock hyprpaper hypridle thunar firefox eog evince file-roller \
+jq alacritty xdg-desktop-portal-hyprland xdg-desktop-portal-gtk polkit-kde-agent gvfs thunar-archive-plugin htop \
+nwg-look ttf-jetbrains-mono-nerd
+```
+
+```
+$ yay -S rofi-emoji
 ```
