@@ -24,7 +24,7 @@ Ensure you have the following installed in your system
 First, clone this repo into your $HOME directory using git
 
 ```
-$ git clone https://github.com/eslam-dv/dotfiles.git
+$ git clone git@github.com:eslam-dv/dotfiles.git 
 $ cd dotfiles
 ```
 
