@@ -43,7 +43,7 @@ $ stow .
 # pacman -S hyprland waybar rofi-wayland mako fastfetch wlogout network-manager-applet pavucontrol pamixer \
 playerctl brightnessctl grim slurp sddm hyprlock hyprpaper hypridle thunar firefox eog evince file-roller \
 jq alacritty xdg-desktop-portal-hyprland xdg-desktop-portal-gtk polkit-kde-agent gvfs thunar-archive-plugin htop \
-nwg-look ttf-jetbrains-mono-nerd p7zip gnome-calculator
+nwg-look ttf-liberation ttf-jetbrains-mono-nerd p7zip gnome-calculator ripgrep
 ```
 
 ```
