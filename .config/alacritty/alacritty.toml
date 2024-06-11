@@ -11,5 +11,5 @@ blur = true
 startup_mode = "Maximized"
 
 [font]
-normal = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Regular" }
+normal = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Medium" }
 size = 12
