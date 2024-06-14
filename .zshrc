@@ -79,8 +79,8 @@ setopt prompt_subst
 zstyle ':vcs_info:*' unstagedstr ''
 zstyle ':vcs_info:*' stagedstr ''
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats 'on %F{#BF40BF,}%f %F{#41fdfe}%b%f %F{#FFFF00}%c%f%F{#EE4B2B}%u%f '
+zstyle ':vcs_info:git:*' formats ' on %F{#BF40BF,}%f %F{#41fdfe}%b%f %F{#FFFF00}%c%f%F{#EE4B2B}%u%f '
 
 NL=$'\n'
 precmd() { print "" }
-PROMPT="%F{#0096FF}%1~%f \$vcs_info_msg_0_ ${NL}%(?.%F{#66ff00}.%F{#EE4B2B})❯%f "
+PROMPT="%F{#0096FF}%1~%f${vcs_info_msg_0_}${NL}%(?.%F{#66ff00}.%F{#EE4B2B})❯%f "
