@@ -1,0 +1,23 @@
+import = [
+  # uncomment the flavour you want below:
+  # "~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+  # "~/.config/alacritty/catppuccin-macchiato.toml"
+  "~/.config/alacritty/themes/catppuccin-mocha.toml"
+]
+
+[window]
+padding = { x = 5, y = 5 }
+decorations = "None"
+opacity = 1
+blur = true
+startup_mode = "Maximized"
+dynamic_title = true
+
+[font]
+normal = { family = "BlexMono Nerd Font Mono", style = "Medium" }
+size = 12
+
+[colors.cursor]
+text = "CellBackground"
+cursor = "CellForeground"

@@ -1,0 +1,12 @@
+font=BlexMono Nerd Font Mono 11
+anchor=top-center
+border-size=1
+border-radius=5
+# Colors
+background-color=#24273a
+text-color=#cad3f5
+border-color=#c6a0f6
+progress-color=over #363a4f
+
+[urgency=high]
+border-color=#f5a97f

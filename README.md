@@ -10,13 +10,13 @@ Ensure you have the following installed in your system
 ### Git
 
 ```
-# pacman -S git
+# xbps-install git
 ```
 
 ### GNU Stow
 
 ```
-# pacman -S stow
+# xbps-install stow
 ```
 
 ## Installation
@@ -35,17 +35,4 @@ the use GNU Stow to create symlinks
 
 ```
 $ stow .
-```
-
-## Hyprland Setup
-
-```
-# pacman -S hyprland waybar rofi-wayland mako fastfetch wlogout network-manager-applet pavucontrol pamixer \
-playerctl brightnessctl grim slurp sddm hyprlock hyprpaper hypridle thunar firefox eog evince file-roller \
-jq alacritty xdg-desktop-portal-hyprland xdg-desktop-portal-gtk polkit-kde-agent gvfs thunar-archive-plugin htop \
-nwg-look ttf-liberation ttf-jetbrains-mono-nerd p7zip gnome-calculator ripgrep
-```
-
-```
-$ yay -S rofi-emoji
 ```
