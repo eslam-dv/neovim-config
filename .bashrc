@@ -3,8 +3,6 @@ export PATH="$PATH:$HOME/.local/bin/"
 export MYVIMRC="$HOME/.config/nvim/"
 export XCURSOR_THEME="capitaine-cursors"
 
-source /usr/share/git/git-prompt.sh
-
 ###----- PROMPT -----###
 function parse_git_dirty {
   STATUS="$(git status 2> /dev/null)"
@@ -27,6 +25,10 @@ PS1='\e[1;34m\W\e[m\e[1;35m$(parse_git_branch " (%s)")\e[m \n\e[1;32m>\e[m '
 export HISTFILESIZE=1000
 export HISTCONTROL="erasedups:ignoreboth"
 export HISTFILE=~/.bash_history
+
+###----- KEYBINDS -----###
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
 
 ###----- ALIASES -----###
 alias ls='eza --icons=always'
