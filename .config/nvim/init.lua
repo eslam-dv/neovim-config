@@ -171,13 +171,28 @@ require("lazy").setup({
 				-- update color values even if buffer is not focused
 				always_update = false,
 			},
-			buftypes = {},
 		},
 	},
 	-- Dressing
 	{
 		"stevearc/dressing.nvim",
 		event = "VeryLazy",
+	},
+	-- Gitsigns
+	{
+		"lewis6991/gitsigns.nvim",
+		opts = {},
+	},
+	-- Markdown Preview
+	{
+		"iamcco/markdown-preview.nvim",
+		event = { "VeryLazy" },
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && yarn install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
 	},
 	-- Tree Sitter
 	{
@@ -288,13 +303,22 @@ require("lazy").setup({
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {
-			defaults = {
-				prompt_prefix = " ",
-				selection_caret = " ",
-				path_display = { "smart" },
-			},
-		},
+		config = function()
+			local actions = require("telescope.actions")
+			require("telescope").setup({
+				defaults = {
+					prompt_prefix = " ",
+					selection_caret = " ",
+					path_display = { "smart" },
+					mappings = {
+						i = {
+							["<C-k>"] = actions.move_selection_previous, -- move to prev result
+							["<C-j>"] = actions.move_selection_next, -- move to next result
+						},
+					},
+				},
+			})
+		end,
 	},
 	-- Indentline
 	{
