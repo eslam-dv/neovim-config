@@ -522,12 +522,15 @@ require("lazy").setup({
 		config = function()
 			local lint = require("lint")
 
+			lint.linters.eslint_d = {
+				args = { "--no-config-lookup" },
+			}
+
 			lint.linters_by_ft = {
 				javascript = { "eslint_d" },
 				typescript = { "eslint_d" },
 				javascriptreact = { "eslint_d" },
 				typescriptreact = { "eslint_d" },
-				svelte = { "eslint_d" },
 				-- python = { "pylint" },
 			}
 

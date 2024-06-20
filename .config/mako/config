@@ -1,7 +1,11 @@
-font=BlexMono Nerd Font Mono 11
+font=BlexMono Nerd Font Mono 12
+layer=overlay
 anchor=top-center
 border-size=1
 border-radius=5
+padding=15
+default-timeout=5000
+ignore-timeout=0
 # Colors
 background-color=#24273a
 text-color=#cad3f5
