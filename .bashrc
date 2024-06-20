@@ -1,7 +1,7 @@
 ###----- EXPORTS -----###
 export PATH="$PATH:$HOME/.local/bin/"
 export MYVIMRC="$HOME/.config/nvim/"
-export XCURSOR_THEME="capitaine-cursors"
+export XCURSOR_THEME="Capitaine Cursors"
 
 ###----- PROMPT -----###
 function parse_git_dirty {
@@ -37,7 +37,8 @@ alias cd='z'
 alias ..="cd ../"
 alias ...="cd ../.."
 alias star='dwl -s startw'
-alias off='poweroff'
+alias po='poweroff'
+alias re='reboot'
 alias c='clear'
 alias bashrc='nvim ~/.bashrc'
 alias src='source ~/.bashrc'

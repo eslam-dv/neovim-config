@@ -11,11 +11,11 @@
 configuration {
 	modi:                       "drun,run,filebrowser,emoji";
     show-icons:                 true;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "󰉋";
-    display-window:             "";
-    display-emoji:              "󰞅";
+    display-drun:               " ";
+    display-run:                " ";
+    display-filebrowser:        "󰉋 ";
+    display-window:             " ";
+    display-emoji:              "󰞅 ";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w} · {c} · {t}";
   font:                       "BlexMono Nerd Font Medium 12";
