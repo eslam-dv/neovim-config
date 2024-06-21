@@ -1,0 +1,145 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "spacing": 5,
+
+  "modules-left": ["hyprland/workspaces", "group/usage"],
+  "modules-center": ["clock"],
+  "modules-right": ["group/sound", "hyprland/language", "tray", "custom/power"],
+
+  "group/usage": {
+    "orientation": "horizontal",
+    "modules": ["memory", "cpu"],
+  },
+
+  "group/bat": {
+    "orientation": "horizontal",
+    "modules": ["battery", "backlight"],
+  },
+
+  "group/sound": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio#output", "pulseaudio#input"],
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "",
+      "2": "󰈹",
+      "3": "",
+      "4": "",
+      "5": "",
+      "default": "",
+    },
+    "icon-size": 50,
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+    },
+  },
+
+  "clock": {
+    "format": "{:%d.%m.%Y | %I:%M %p}",
+    "tooltip-format": "<small><tt>{calendar}</tt></small>",
+  },
+
+  "pulseaudio#output": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": " {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", ""],
+    },
+    "scroll-step": 5,
+    "on-click": "pamixer -t",
+    "on-click-middle": "pavucontrol",
+  },
+
+  "pulseaudio#input": {
+    "format-source": " {volume}%",
+    "format-source-muted": " ",
+    "format": "{format_source}",
+    "scroll-step": 5,
+    "smooth-scrolling-threshold": 1,
+    "max-volume": 100,
+    "on-click": "pamixer --default-source -t",
+    "on-click-middle": "pavucontrol",
+    "on-scroll-up": "pamixer --default-source -i 5",
+    "on-scroll-down": "pamixer --default-source -d 5",
+  },
+
+  "battery": {
+    "bat": "BAT1",
+    "interval": 60,
+    "format": "{icon}  {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+  },
+
+  "backlight": {
+    "format": " {percent}%",
+  },
+
+  "memory": {
+    "tooltip": true,
+    "interval": 30,
+    "format": "  {used:0.1f}G",
+    "on-click": "alacritty -t htop -e htop",
+  },
+
+  "temperature": {
+    "format": " {temperatureC}°C",
+  },
+
+  "network": {
+    "format": "",
+    "format-ethernet": "\udb83\udc9d ",
+    "format-wifi": "{icon} ",
+    "format-disconnected": "\udb83\udc9c ",
+    "format-icons": [
+      "\udb82\udd2f",
+      "\udb82\udd1f",
+      "\udb82\udd22",
+      "\udb82\udd25",
+      "\udb82\udd28",
+    ],
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected",
+  },
+
+  "bluetooth": {
+    "format": "\udb80\udcaf",
+    "format-disabled": "\udb80\udcb2",
+    "format-connected": "\udb80\udcb1",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+  },
+
+  "hyprland/language": {
+    "format": "{short}",
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 16,
+  },
+
+  "custom/power": {
+    "format": "",
+    "on-click": "wlogout",
+    "tooltip": false,
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": true,
+    "on-click": "alacritty -t htop -e htop",
+  },
+}

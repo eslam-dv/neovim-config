@@ -7,12 +7,12 @@ export XCURSOR_THEME="Capitaine Cursors"
 function parse_git_dirty {
   STATUS="$(git status 2> /dev/null)"
   if [[ $? -ne 0 ]]; then printf ""; return; fi
-  if echo ${STATUS} | grep -c "renamed:"         &> /dev/null; then printf " "; else printf ""; fi
+  if echo ${STATUS} | grep -c "renamed:"         &> /dev/null; then printf " 󰜴"; else printf ""; fi
   if echo ${STATUS} | grep -c "branch is ahead:" &> /dev/null; then printf " !"; else printf ""; fi
-  if echo ${STATUS} | grep -c "new file::"       &> /dev/null; then printf " "; else printf ""; fi
+  if echo ${STATUS} | grep -c "new file::"       &> /dev/null; then printf " "; else printf ""; fi
   if echo ${STATUS} | grep -c "Untracked files:" &> /dev/null; then printf " ?"; else printf ""; fi
-  if echo ${STATUS} | grep -c "modified:"        &> /dev/null; then printf " "; else printf ""; fi
-  if echo ${STATUS} | grep -c "deleted:"         &> /dev/null; then printf " "; else printf ""; fi
+  if echo ${STATUS} | grep -c "modified:"        &> /dev/null; then printf " "; else printf ""; fi
+  if echo ${STATUS} | grep -c "deleted:"         &> /dev/null; then printf " "; else printf ""; fi
 }
 
 function parse_git_branch {
@@ -22,9 +22,9 @@ function parse_git_branch {
 # change prompt color depending on the exit status of last command
 function set_prompt {
     if [ $? -eq 0 ]; then
-        PS1="\e[1;34m\W\e[m\e[1;35m$(parse_git_branch " (%s)")\e[m \n\e[1;32m󰅂\e[m "
+        PS1="\e[1;34m\W\e[m\e[1;35m$(parse_git_branch " (%s)")\e[m \n\e[1;32m\$\e[m "
     else
-        PS1="\e[1;34m\W\e[m\e[1;35m$(parse_git_branch " (%s)")\e[m \n\e[1;31m󰅂\e[m "
+        PS1="\e[1;34m\W\e[m\e[1;35m$(parse_git_branch " (%s)")\e[m \n\e[1;31m\$\e[m "
     fi
 }
 
