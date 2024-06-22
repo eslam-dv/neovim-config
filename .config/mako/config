@@ -1,11 +1,15 @@
-font=BlexMono Nerd Font Mono 12
+font=JetBrainsMono Nerd Font Mono 12
 layer=overlay
 anchor=top-center
 border-size=1
 border-radius=5
 padding=15
+margin=5,0
+text-alignment=center
 default-timeout=5000
 ignore-timeout=0
+width=300
+max-icon-size=24
 # Colors
 background-color=#24273a
 text-color=#cad3f5
