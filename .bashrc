@@ -41,7 +41,8 @@ bind '"\e[B": history-search-forward'
 
 ###----- ALIASES -----###
 alias ls='eza --icons=always'
-alias la="ls -la"
+alias ll='ls -l'
+alias la="ls -a"
 alias cd='z'
 alias ..="cd ../"
 alias ...="cd ../.."
