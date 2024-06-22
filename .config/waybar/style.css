@@ -12,37 +12,42 @@
 }
 
 #waybar {
-  background-color: rgba(17, 17, 27, 0.2);
-}
-#workspaces {
+  /* background-color: rgb(17, 17, 27); */
   background-color: transparent;
-}
-#workspaces button {
-  background-color: transparent;
-  color: #cdd6f4;
-  padding-left: 1em;
-  padding-right: 1.3em;
 }
 
-#workspaces button.empty {
+#tags {
+  background-color: #313244;
+}
+
+#tags button {
+  background-color: transparent;
   color: rgba(205, 214, 244, 0.4);
+  /* padding-left: 1em; */
+  /* padding-right: 1.3em; */
 }
 
-#workspaces button.active {
+#tags button.occupied {
+  color: #cdd6f4;
+}
+
+#tags button.focused {
   background-color: #89b4fa;
   color: #fff;
   border-radius: 3px;
 }
 
-#wireplumber,
+#tags,
+#clock,
 #pulseaudio,
 #custom-power,
 #language,
-#bat,
+#battery,
+#backlight,
 #tray,
 #usage,
 #sound,
-#net {
+#network {
   background-color: #313244;
   color: #cdd6f4;
   border-radius: 3px;
@@ -51,19 +56,37 @@
   margin-left: 0.3em;
 }
 
-#usage,
-#custom-power {
-  background-color: #89b4fa;
-  color: #fff;
+#network {
+  color: #eba0ac;
+}
+
+#usage {
+  color: #b4befe;
+}
+
+#clock {
+  color: #94e2d5;
+}
+
+#pulseaudio {
+  color: #89b4fa;
+}
+
+#backlight {
+  color: #f9e2af;
+}
+
+#battery {
+  color: #a6e3a1;
 }
 
 #custom-power {
+  background-color: #f38ba8;
+  color: #fff;
   padding-right: 1em;
   padding-left: 0.6em;
 }
 
-#battery,
-#memory,
-#network {
+#memory {
   margin-right: 0.8em;
 }
