@@ -53,6 +53,7 @@ alias c='clear'
 alias bashrc='nvim ~/.bashrc'
 alias src='source ~/.bashrc'
 alias vimrc='nvim ~/.config/nvim'
+alias ff='fastfetch'
 
 ###----- OTHER -----###
 eval "$(zoxide init bash)"
