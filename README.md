@@ -30,9 +30,8 @@ $ cd dotfiles
 
 the use GNU Stow to create symlinks
 
-> **_NOTE:_**
-> Make sure there is no existing configerations on your system.
-
 ```
-$ stow .
+$ stow nvim
+$ stow bash
+etc
 ```
