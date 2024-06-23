@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ "$1" == "--area" ]]; then
+  grim -g "$(slurp)" - | wl-copy
+elif [[ "$1" == "--swappy"  ]]; then
+  grim -g "$(slurp)" - | swappy -f -
+else
+  echo "Avilable Options: --area, --swappy "
+fi
