@@ -42,6 +42,11 @@ map("i", "<C-a>", "<esc>ggVG", opts) -- crtl+a select all
 map("n", "<C-s>", ":w!<cr>", opts) -- crtl+s save file
 map("n", "<C-a>", "ggVG", opts) -- crtl+a select all
 map("n", "<leader>h", ":nohl<cr>", opts) -- remove highlight
+-- Resize with arrows
+map("n", "<C-Up>", ":resize -2<CR>", opts)
+map("n", "<C-Down>", ":resize +2<CR>", opts)
+map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- window navigatoin
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-l>", "<C-w>l", opts)
@@ -75,8 +80,8 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 map("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 map("n", "<leader>ff", ":Telescope find_files<cr>", opts)
 map("n", "<leader>fr", ":Telescope oldfiles<cr>", opts)
-map("n", "<leader>fs", ":Telescope live_grep<cr>", opts)
-map("n", "<leader>fc", ":Telescope grep_string<cr>", opts)
+map("n", "<leader>fl", ":Telescope live_grep<cr>", opts)
+map("n", "<leader>fg", ":Telescope grep_string<cr>", opts)
 map("n", "<leader>ft", ":TodoTelescope<cr>", opts)
 
 --------------
@@ -164,7 +169,7 @@ require("lazy").setup({
 				-- Available modes for `mode`: foreground, background,  virtualtext
 				mode = "background", -- Set the display mode.
 				-- True is same as normal
-				tailwind = false, -- Enable tailwind colors
+				tailwind = true, -- Enable tailwind colors
 				-- parsers can contain values used in |user_default_options|
 				sass = { enable = false, parsers = { "css" } }, -- Enable sass colors
 				virtualtext = "■",
@@ -199,9 +204,6 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			"windwp/nvim-ts-autotag",
-		},
 		config = function()
 			local configs = require("nvim-treesitter.configs")
 			configs.setup({
@@ -210,9 +212,13 @@ require("lazy").setup({
 				sync_install = false,
 				highlight = { enable = true },
 				indent = { enable = true },
-				autotag = { enable = true },
 			})
 		end,
+	},
+	-- Auto tag
+	{
+		"windwp/nvim-ts-autotag",
+		opts = { opts = { enable_close = true, enable_rename = true, enable_close_on_slash = true } },
 	},
 	-- Lualine
 	{
@@ -522,9 +528,10 @@ require("lazy").setup({
 		config = function()
 			local lint = require("lint")
 
-			lint.linters.eslint_d = {
-				args = { "--no-config-lookup" },
-			}
+			-- lint.linters.eslint_d = {
+			--      cmd = "eslint_d",
+			-- 	args = { "--no-config-lookup" },
+			-- }
 
 			lint.linters_by_ft = {
 				javascript = { "eslint_d" },

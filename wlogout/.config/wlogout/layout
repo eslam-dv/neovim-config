@@ -6,7 +6,7 @@
 
 {
     "label" : "hibernate",
-    "action" : "systemctl hibernate",
+    "action" : "loginctl hibernate",
     "text" : "Hibernate"
 }
 
@@ -24,7 +24,7 @@
 
 {
     "label" : "suspend",
-    "action" : "systemctl suspend",
+    "action" : "loginctl suspend",
     "text" : "Suspend"
 }
 
