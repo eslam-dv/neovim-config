@@ -21,9 +21,9 @@ function parse_git_branch {
 # change prompt color depending on the exit status of last command
 function set_prompt {
     if [ $? -eq 0 ]; then
-        PS1="\e[1;34m\W\e[m\e[1;35m$(parse_git_branch " (%s)")\e[m \e[1;32m󰅂\e[m "
+        PS1="\e[1;34m\W\e[m\e[1;35m$(parse_git_branch " (%s)")\e[m \e[1;32m󰄾\e[m "
     else
-        PS1="\e[1;34m\W\e[m\e[1;35m$(parse_git_branch " (%s)")\e[m \e[1;31m󰅂\e[m "
+        PS1="\e[1;34m\W\e[m\e[1;35m$(parse_git_branch " (%s)")\e[m \e[1;31m󰄾\e[m "
     fi
 }
 
